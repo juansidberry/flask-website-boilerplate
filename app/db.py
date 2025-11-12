@@ -7,11 +7,11 @@ from botocore.config import Config
 # Hate using the environment variables approach
 # Will change this to something more secure and repeatable
 AWS_REGION = os.getenv("AWS_REGION", "us-east-1")
-DB_USER     = os.getenv("DB_USER")            # e.g. "app_user"
-DB_NAME     = os.getenv("DB_NAME")            # e.g. "appdb"
-DB_HOST     = os.getenv("DB_HOST")            # RDS endpoint
+DB_USER     = os.getenv("DB_USER")            # for boilerplate "app_user"
+DB_NAME     = os.getenv("DB_NAME")            # for boilerplate "appdb"
+DB_HOST     = os.getenv("DB_HOST")            # for boilerplate use the RDS Endpoint
 DB_PORT     = int(os.getenv("DB_PORT", "5432"))
-LAMBDA_ARN  = os.getenv("RDS_IAM_LAMBDA_ARN") # Lambda to fetch IAM token
+LAMBDA_ARN  = os.getenv("RDS_IAM_LAMBDA_ARN") 
 
 _lambda = boto3.client("lambda", region_name=AWS_REGION, config=Config(retries={"max_attempts": 3}))
 
