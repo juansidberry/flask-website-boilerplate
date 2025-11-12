@@ -4,6 +4,8 @@ import boto3
 import psycopg2
 from botocore.config import Config
 
+# Hate using the environment variables approach
+# Will change this to something more secure and repeatable
 AWS_REGION = os.getenv("AWS_REGION", "us-east-1")
 DB_USER     = os.getenv("DB_USER")            # e.g. "app_user"
 DB_NAME     = os.getenv("DB_NAME")            # e.g. "appdb"
